@@ -1,0 +1,16 @@
+So these are a few scripts I used for a data mining project.
+
+The js file is a greasemonkey plugin. I used it to grab the usernames
+displayed at
+
+http://www.last.fm/community/users/active
+
+We next have the file crawl_friend_tree.py, which I supposed is misnamed, as since friendship is a symmetric relation, its graph is best viewed as an undirected graph with cycles. Heh. Anyways, it takes as input a bunch of usernames, and prints some subset of those people's friends (something like 50 of each person's friends).
+
+The next file, make_name_file_unique.py, just removes duplicate lines from, e.g., a list of usernames. It's extremely simple.
+
+The workhorse of this thing is crawl_user_data, which takes as input as list of usernames and gets historical data for those users. Right now the only data we gather is weekly top artists (for as far back as we can for each user). This can, of course, be easily extended. The data is thrown into json files in the data/ dir (which you must create before running the script).
+
+You must have pylast ( http://code.google.com/p/pylast/ ) installed.
+
+All of this is licensed with the WTFPL ( http://sam.zoy.org/wtfpl/ )
